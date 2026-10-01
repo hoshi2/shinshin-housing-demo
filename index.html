@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="藤沢市天神町の不動産会社、有限会社新進ハウジング。1986年創業。住まいの売却・購入の仲介、賃貸管理、賃貸仲介。藤沢・湘南で、静かに、ていねいに。">
+<title>新進ハウジング</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap">
+<style>
+/* Layout concept: a white room. One column of air, photos placed like a few large plants,
+   a leaf shadow drifting across the wall. Deep leaf green is the only strong colour. */
+:root{
+  --bg:#fbfaf6;         /* warm white wall */
+  --bg-2:#f3f1ea;       /* washi */
+  --bg-3:#e9ebe3;       /* pale moss */
+  --fg:#242d27;         /* green-black ink */
+  --fg-2:#6d776f;       /* muted */
+  --green:#2e5a44;      /* deep leaf */
+  --green-2:#8aa391;    /* sage */
+  --wood:#b89b76;       /* light oak */
+  --line:rgba(36,45,39,.13);
+  --line-strong:rgba(36,45,39,.3);
+  --font-display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --font-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --font-latin:"Cormorant Garamond",Georgia,serif;
+  --wrap:1160px;
+  --gutter:clamp(18px,5vw,56px);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-weight:400;font-size:15.5px;line-height:2;letter-spacing:.04em;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+[hidden]{display:none!important}
+section[id],main[id]{scroll-margin-top:84px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-family:var(--font-display);font-weight:500;line-height:1.6;letter-spacing:.08em;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.en{font-family:var(--font-latin);font-style:italic;font-weight:500;letter-spacing:.12em;color:var(--green-2)}
+.sp{display:none}
+
+/* demo banner */
+.demo{background:var(--bg-3);color:var(--green);font-size:12.5px;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;gap:14px;padding:7px var(--gutter);line-height:1.7;border-bottom:1px solid var(--line)}
+.demo b{font-weight:500}
+.demo button{background:none;border:1px solid var(--green-2);color:inherit;border-radius:999px;font:inherit;padding:5px 12px;min-height:32px;cursor:pointer;white-space:nowrap;flex:none}
+
+/* header */
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(251,250,246,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .4s}
+.header.solid{border-color:var(--line)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.brand{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.brand .name{font-family:var(--font-display);font-size:21px;font-weight:500;letter-spacing:.22em;white-space:nowrap}
+.brand .sub{font-family:var(--font-latin);font-style:italic;font-size:12.5px;letter-spacing:.18em;color:var(--fg-2);white-space:nowrap}
+.nav{display:flex;align-items:center;gap:30px;font-size:13px;letter-spacing:.18em}
+.nav a{position:relative;padding-block:6px;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--green);transition:right .4s ease}
+@media (hover:hover){.nav a:hover::after{right:0}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:14px 28px;border:1px solid var(--green);color:var(--green);font-size:13px;letter-spacing:.2em;font-weight:500;white-space:nowrap;position:relative;isolation:isolate;overflow:hidden;transition:color .4s;cursor:pointer;font-family:inherit;background:none;line-height:1.4}
+.btn::before{content:"";position:absolute;inset:0;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.77,0,.18,1);z-index:-1}
+@media (hover:hover){.btn:hover{color:#fff}.btn:hover::before{transform:scaleX(1)}}
+.btn.fill{background:var(--green);color:#fff}
+.btn.fill::before{background:var(--fg)}
+.btn .arrow{width:26px;height:8px;flex:none}
+.nav .btn{padding:11px 20px}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px;color:var(--fg)}
+.burger span{display:block;width:26px;height:1px;background:currentColor;margin:7px 0}
+.mobile-nav{display:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--bg-2)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr;min-height:min(86vh,820px);align-items:stretch;gap:0}
+.hero .copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:28px;padding-block:72px;padding-right:48px;min-width:0}
+.hero .eyebrow{display:flex;align-items:center;gap:16px;font-size:12.5px;letter-spacing:.3em;color:var(--fg-2)}
+.hero .eyebrow::before{content:"";width:40px;height:1px;background:var(--green-2)}
+.hero h1{font-size:clamp(28px,3vw,40px);font-weight:500;line-height:1.75;letter-spacing:.1em}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero .lead{color:var(--fg-2);max-width:30em;font-size:15px;line-height:2.2}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-top:8px}
+.hero .tel{font-family:var(--font-latin);font-size:26px;letter-spacing:.08em;line-height:1;display:flex;align-items:baseline;gap:12px;color:var(--fg)}
+.hero .tel small{font-family:var(--font-body);font-size:11.5px;letter-spacing:.16em;color:var(--fg-2)}
+.hero .visual{position:relative;min-width:0;margin-right:calc(-1 * var(--gutter))}
+.hero .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% 62%}
+.hero .visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg-2) 0%,rgba(243,241,234,0) 28%)}
+.hero .shade{position:absolute;inset:-10%;background:url("img/shadow-leaf.jpg") center/cover no-repeat;mix-blend-mode:multiply;opacity:.42;pointer-events:none;animation:drift 46s ease-in-out infinite alternate;z-index:1}
+@keyframes drift{from{transform:translate(-2%,-1%) scale(1.04)}to{transform:translate(2%,1.5%) scale(1.1)}}
+.hero .tate{position:absolute;right:calc(var(--gutter) + 18px);top:64px;z-index:3;writing-mode:vertical-rl;font-family:var(--font-display);font-size:13px;letter-spacing:.42em;color:var(--fg);background:rgba(251,250,246,.78);padding:18px 9px;line-height:1}
+.rise{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+.rise.d1{animation-delay:.15s}.rise.d2{animation-delay:.3s}.rise.d3{animation-delay:.45s}
+@keyframes rise{from{opacity:.001;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ribbon */
+.ribbon{border-block:1px solid var(--line);background:var(--bg)}
+.ribbon .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-block:20px;font-size:13px;letter-spacing:.14em;color:var(--fg-2)}
+.ribbon span{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.ribbon span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--green-2)}
+
+/* sections */
+.section{padding-block:clamp(80px,11vw,150px)}
+.sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(40px,6vw,72px)}
+.sec-head .en{font-size:14px}
+.sec-head h2{font-size:clamp(25px,3vw,36px)}
+.sec-head .desc{color:var(--fg-2);max-width:38em;font-size:15px}
+.sec-head.center{align-items:center;text-align:center}
+
+/* story */
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.story .photo{position:relative;min-width:0}
+.story .photo img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.story .photo .year{position:absolute;left:-14px;bottom:-22px;background:var(--bg);padding:14px 22px;font-family:var(--font-latin);font-style:italic;font-size:15px;letter-spacing:.2em;color:var(--green);border:1px solid var(--line)}
+.story .photo .year b{display:block;font-style:normal;font-size:42px;letter-spacing:.06em;line-height:1;color:var(--fg);font-weight:500}
+.story .copy{display:flex;flex-direction:column;gap:26px;min-width:0}
+.story h2{font-size:clamp(24px,2.6vw,32px);letter-spacing:.06em}
+.story .copy p{color:var(--fg-2)}
+.story .facts{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line);margin-top:8px}
+.story .fact{padding:20px 16px 18px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.story .fact .k{font-size:11.5px;letter-spacing:.22em;color:var(--fg-2)}
+.story .fact .v{font-family:var(--font-latin);font-size:30px;line-height:1.1;color:var(--fg);font-variant-numeric:tabular-nums}
+.story .fact .v small{font-family:var(--font-display);font-size:14px;margin-left:5px;letter-spacing:.1em}
+
+/* services */
+.services{background:var(--bg-2)}
+.svc-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:120px 1fr 1.1fr 300px;gap:clamp(20px,3vw,48px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-bottom:1px solid var(--line);min-width:0}
+.svc .no{font-family:var(--font-latin);font-style:italic;font-size:44px;color:var(--green-2);line-height:1}
+.svc h3{font-size:clamp(21px,2.2vw,27px);letter-spacing:.1em}
+.svc h3 span{display:block;font-family:var(--font-latin);font-style:italic;font-size:13px;letter-spacing:.16em;color:var(--fg-2);margin-top:6px;font-weight:500}
+.svc p{color:var(--fg-2);font-size:14.5px}
+.svc .for{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;letter-spacing:.08em;color:var(--green)}
+.svc .for span::before{content:"— ";color:var(--green-2)}
+.svc img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.svc .cap{min-width:0}
+
+/* flow */
+.flows{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px)}
+.flow{display:flex;flex-direction:column;gap:0;min-width:0}
+.flow h3{font-size:22px;letter-spacing:.14em;padding-bottom:18px;border-bottom:1px solid var(--line-strong);display:flex;align-items:baseline;gap:14px}
+.flow h3 .en{font-size:13px}
+.flow ol{list-style:none;margin:0;padding:0}
+.flow li{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.flow li .n{font-family:var(--font-latin);font-style:italic;font-size:22px;color:var(--green-2);line-height:1.3}
+.flow li b{display:block;font-family:var(--font-display);font-weight:500;font-size:16.5px;letter-spacing:.08em;margin-bottom:4px}
+.flow li span{color:var(--fg-2);font-size:14px}
+.flow-note{margin-top:34px;color:var(--fg-2);font-size:14px;text-align:center}
+
+/* values */
+.values{position:relative;overflow:hidden;background:var(--bg-2)}
+.values .shade{position:absolute;inset:0;background:url("img/shadow-wall.jpg") center/cover no-repeat;mix-blend-mode:multiply;opacity:.18;pointer-events:none}
+.values .wrap{position:relative}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+.value{display:flex;flex-direction:column;gap:16px;min-width:0;padding-top:22px;border-top:1px solid var(--line-strong)}
+.value .en{font-size:13px}
+.value h3{font-size:22px;letter-spacing:.14em}
+.value p{color:var(--fg-2);font-size:14.5px}
+
+/* message */
+.message .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.message .photo{min-width:0}
+.message .photo img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.message .copy{display:flex;flex-direction:column;gap:24px;min-width:0}
+.message h2{font-size:clamp(24px,2.8vw,34px)}
+.message .copy p{color:var(--fg-2)}
+.message .sign{margin-top:10px;display:flex;flex-direction:column;gap:4px}
+.message .sign small{font-size:12px;letter-spacing:.2em;color:var(--fg-2)}
+.message .sign b{font-family:var(--font-display);font-weight:500;font-size:22px;letter-spacing:.3em}
+
+/* area */
+.area{position:relative;overflow:hidden;color:#fff}
+.area img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.area::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,45,39,.25),rgba(36,45,39,.7))}
+.area .wrap{position:relative;z-index:1;padding-block:clamp(90px,12vw,160px);display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.area .en{color:rgba(255,255,255,.75)}
+.area h2{font-size:clamp(26px,3.2vw,40px);color:#fff}
+.area p{color:rgba(255,255,255,.85);max-width:36em}
+.area .list{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:8px}
+.area .list span{border:1px solid rgba(255,255,255,.4);padding:5px 14px;font-size:12.5px;letter-spacing:.14em}
+
+/* company */
+.company .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,7vw,110px)}
+.company .col{min-width:0;display:flex;flex-direction:column;gap:22px}
+.ctable{width:100%;border-collapse:collapse;font-size:14.5px;border-top:1px solid var(--line-strong)}
+.ctable th,.ctable td{padding:15px 0;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.ctable th{width:8.5em;font-weight:500;font-size:12.5px;letter-spacing:.2em;color:var(--fg-2);padding-right:14px}
+.access{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--fg-2)}
+.access a{color:var(--green);text-decoration:underline;text-underline-offset:4px;display:inline-block;padding:6px 0}
+.license{border:1px solid var(--line-strong);padding:22px 24px;display:flex;flex-direction:column;gap:6px}
+.license .k{font-size:11.5px;letter-spacing:.22em;color:var(--fg-2)}
+.license .v{font-family:var(--font-display);font-size:19px;letter-spacing:.1em}
+.license .s{font-size:13px;color:var(--fg-2)}
+
+/* contact */
+.contact{background:var(--bg-2);border-top:1px solid var(--line)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,6vw,96px)}
+.contact .intro{display:flex;flex-direction:column;gap:24px;min-width:0}
+.contact h2{font-size:clamp(26px,3vw,36px)}
+.contact .intro p{color:var(--fg-2)}
+.telbox{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);padding:24px 0;display:flex;flex-direction:column;gap:6px}
+.telbox .k{font-size:11.5px;letter-spacing:.26em;color:var(--fg-2)}
+.telbox .v{font-family:var(--font-latin);font-size:36px;letter-spacing:.06em;line-height:1.1}
+.telbox .h{font-size:12.5px;color:var(--fg-2);letter-spacing:.1em}
+form{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;min-width:0}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:12.5px;letter-spacing:.2em;color:var(--fg-2)}
+.field label i{font-style:normal;color:var(--green);margin-left:8px;font-size:11px}
+.field input,.field select,.field textarea{width:100%;background:var(--bg);border:0;border-bottom:1px solid var(--line-strong);color:var(--fg);font:inherit;font-size:16px;padding:12px 14px;border-radius:0;transition:border-color .3s,background .3s;min-width:0}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--green);background:#fff}
+.field textarea{min-height:140px;resize:vertical}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--fg-2) 50%),linear-gradient(135deg,var(--fg-2) 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+.kinds{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.kinds label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);padding:9px 16px;font-size:13px;letter-spacing:.1em;cursor:pointer;background:var(--bg);transition:background .25s,border-color .25s,color .25s}
+.kinds input{appearance:none;-webkit-appearance:none;width:10px;height:10px;border-radius:50%;border:1px solid var(--green-2);margin:0;flex:none}
+.kinds input:checked{background:var(--green);border-color:var(--green)}
+.kinds label:has(input:checked){border-color:var(--green);color:var(--green)}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.form-foot small{color:var(--fg-2);font-size:12px;letter-spacing:.06em}
+.sent{grid-column:1/-1;border:1px solid var(--green);padding:34px;display:none;flex-direction:column;gap:10px;text-align:center}
+.sent.show{display:flex}
+.sent b{font-family:var(--font-display);font-weight:500;font-size:22px;letter-spacing:.1em}
+.sent span{color:var(--fg-2);font-size:14px}
+
+/* footer */
+.footer{padding-block:48px 28px;font-size:12.5px;color:var(--fg-2);letter-spacing:.12em}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.footer .brand .name{font-size:19px}
+.footer address{font-style:normal;margin-top:10px;line-height:1.9}
+.footer nav{display:flex;flex-wrap:wrap;gap:2px 24px}
+.footer nav a{display:inline-block;padding:6px 0}
+.footer .copy{font-family:var(--font-latin);font-style:italic;letter-spacing:.16em;font-size:13px;width:100%;border-top:1px solid var(--line);padding-top:18px;margin-top:8px}
+
+/* reveal */
+.rv{opacity:1;transform:none;transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv:not(.in){opacity:0;transform:translateY(22px)}
+
+/* responsive */
+@media (max-width:1060px){
+  .nav{display:none}
+  .burger{display:block}
+  .mobile-nav{display:none;position:fixed;inset:0;z-index:60;background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 96px) var(--gutter) 40px;flex-direction:column;gap:4px;font-family:var(--font-display);font-size:22px;letter-spacing:.2em}
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .mobile-nav .btn{margin-top:26px;font-family:var(--font-body);font-size:13.5px;justify-content:center}
+  .mobile-nav .close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 20px);right:var(--gutter);background:none;border:1px solid var(--line-strong);color:var(--fg);width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer}
+  .svc{grid-template-columns:70px 1fr 1fr;gap:20px}
+  .svc img{grid-column:2/-1;max-width:420px}
+  .svc .no{font-size:34px}
+  .value-grid{grid-template-columns:1fr}
+  .story .facts{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0}
+  .hero .copy{padding:44px 0 40px;order:2;gap:20px}
+  .hero .visual{order:1;margin-inline:calc(-1 * var(--gutter));height:52vw;min-height:230px;max-height:360px}
+  .hero .visual::after{background:linear-gradient(180deg,rgba(243,241,234,0) 60%,var(--bg-2) 100%)}
+  .hero .tate{display:none}
+  .hero h1{font-size:27px;line-height:1.7}
+  .hero .cta .btn{width:100%}
+  .ribbon .wrap{flex-direction:column;gap:8px}
+  .story .wrap,.message .wrap,.company .wrap,.contact .wrap,.flows{grid-template-columns:1fr}
+  .story .photo img{aspect-ratio:4/3}
+  .story .photo .year{left:0;bottom:-18px}
+  .story .facts{grid-template-columns:1fr 1fr 1fr}
+  .story .fact .v{font-size:24px}
+  .svc{grid-template-columns:1fr;gap:14px;padding:30px 0}
+  .svc .no{font-size:30px}
+  .svc img{grid-column:auto;max-width:100%;aspect-ratio:16/9}
+  .message .photo img{aspect-ratio:16/10}
+  form{grid-template-columns:1fr}
+  .form-foot .btn{width:100%}
+  .sp{display:inline}
+  .demo{font-size:11.5px;gap:10px;text-align:left}
+}
+@media (max-width:420px){
+  .story .facts{grid-template-columns:1fr 1fr}
+  .story .fact:last-child{grid-column:1/-1}
+  .story .fact .v{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .js .rv:not(.in){opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="demo" id="demo">
+  <span><b>デモ版</b>　写真・数値・一部の文章は仮のものです。実際の写真と会社情報に差し替えて公開します。</span>
+  <button type="button" id="demoClose" aria-label="閉じる">閉じる</button>
+</div>
+
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="新進ハウジング トップへ">
+      <span class="name">新進ハウジング</span>
+      <span class="sub">Shinshin Housing — Fujisawa, since 1986</span>
+    </a>
+    <nav class="nav" aria-label="主要">
+      <a href="#about">私たちについて</a>
+      <a href="#services">できること</a>
+      <a href="#flow">ご相談の流れ</a>
+      <a href="#values">大切にしていること</a>
+      <a href="#company">会社概要</a>
+      <a class="btn" href="#contact">ご相談<svg class="arrow" viewBox="0 0 26 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 7h24M19 1l6 6"/></svg></a>
+    </nav>
+    <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav" aria-label="モバイル">
+  <button class="close" id="navClose" aria-label="閉じる">×</button>
+  <a href="#about">私たちについて</a>
+  <a href="#services">できること</a>
+  <a href="#flow">ご相談の流れ</a>
+  <a href="#values">大切にしていること</a>
+  <a href="#company">会社概要</a>
+  <a class="btn" href="#contact">ご相談はこちら</a>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="copy">
+        <p class="eyebrow rise">藤沢・湘南の不動産　1986年創業</p>
+        <h1 class="rise d1">住まいのことを、<br>静かに、<em>ていねいに</em>。</h1>
+        <p class="lead rise d2">売る、買う、貸す、まもる。暮らしの節目にあらわれる住まいの相談ごとを、藤沢の小さな不動産店が、二代にわたってお引き受けしてきました。急がせず、隠さず、暮らしの先まで考えてご提案します。</p>
+        <div class="cta rise d3">
+          <a class="btn fill" href="#contact">相談してみる<svg class="arrow" viewBox="0 0 26 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 7h24M19 1l6 6"/></svg></a>
+          <div class="tel"><span>0466-47-7655</span><small>10:00–18:00　水曜定休</small></div>
+        </div>
+      </div>
+      <div class="visual">
+        <img src="img/hero-room.jpg" alt="光の入る白い部屋に置かれた大きな観葉植物" width="2000" height="3554" fetchpriority="high">
+        <div class="shade" aria-hidden="true"></div>
+      </div>
+      <div class="tate" aria-hidden="true">藤沢市天神町　宅地建物取引業 神奈川県知事（10）第14503号</div>
+    </div>
+  </section>
+
+  <div class="ribbon">
+    <div class="wrap">
+      <span>住まいの売却・購入の仲介</span>
+      <span>賃貸オーナー様の管理代行</span>
+      <span>お部屋探し・賃貸仲介</span>
+      <span>ご相談・査定は無料</span>
+    </div>
+  </div>
+
+  <section class="section story" id="about">
+    <div class="wrap">
+      <div class="photo rv">
+        <img src="img/plant-wall.jpg" alt="白い壁に葉の影が落ちるモンステラ" loading="lazy">
+        <div class="year"><b>1986</b>Since</div>
+      </div>
+      <div class="copy rv">
+        <span class="en">About us</span>
+        <h2>祖父母が始めた店を、<br>二代目として、続けています。</h2>
+        <p>新進ハウジングは、1986年に藤沢市天神町で生まれた不動産店です。長く地元の大家さんと入居者の方をつないできた祖父母の仕事を、代表の渋谷が引き継ぎ、売買仲介と賃貸管理を中心に続けています。</p>
+        <p>大きな会社ではありません。だからこそ、一件一件に時間をかけ、担当が最初から最後まで変わらずにお付き合いできます。宅建免許の更新回数「（10）」は、藤沢でこの仕事を続けてきた年月の証です。</p>
+        <div class="facts">
+          <div class="fact"><span class="k">創業</span><span class="v">1986<small>年</small></span></div>
+          <div class="fact"><span class="k">免許更新</span><span class="v">10<small>回</small></span></div>
+          <div class="fact"><span class="k">本店</span><span class="v" style="font-family:var(--font-display);font-size:20px;letter-spacing:.1em">藤沢市天神町</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="en">Services</span>
+        <h2>できること</h2>
+        <p class="desc">物件をたくさん並べるより、まず話を聞くことから。ご相談の内容に合わせて、必要なことだけをご提案します。</p>
+      </div>
+      <div class="svc-list">
+        <article class="svc rv">
+          <span class="no">01</span>
+          <div class="cap"><h3>売買仲介<span>Sale &amp; Purchase</span></h3>
+            <div class="for"><span>家を売りたい</span><span>家を買いたい</span><span>相続した家をどうするか</span></div></div>
+          <p>戸建て・マンション・土地の売却と購入をお手伝いします。査定は無料。売り急がせることはせず、相場と理由をきちんとお伝えしたうえで、売り方を一緒に決めます。相続や住み替えで「まだ決めていない」段階のご相談も歓迎です。</p>
+          <img src="img/leaf-single.jpg" alt="白い壁の前のモンステラの葉" loading="lazy">
+        </article>
+        <article class="svc rv">
+          <span class="no">02</span>
+          <div class="cap"><h3>賃貸管理<span>Property Management</span></h3>
+            <div class="for"><span>アパート・貸家のオーナー様</span><span>親から引き継いだ物件</span></div></div>
+          <p>入居者の募集、家賃の集金、更新、退去立ち会い、設備の不具合対応まで。祖父母の代から続く大家さんとのお付き合いを、同じ距離感で続けています。管理戸数を増やすことより、一棟一棟を長く健やかに保つことを優先しています。</p>
+          <img src="img/chair-plants.jpg" alt="観葉植物と木の椅子のある明るい室内" loading="lazy">
+        </article>
+        <article class="svc rv">
+          <span class="no">03</span>
+          <div class="cap"><h3>賃貸仲介<span>Rental</span></h3>
+            <div class="for"><span>藤沢・湘南で部屋を探したい</span><span>店舗・事務所を借りたい</span></div></div>
+          <p>藤沢駅周辺から湘南エリアまで、暮らし方に合ったお部屋をご紹介します。地元で長くやっているからこそ知っている、表に出にくい物件や街の事情もお伝えします。</p>
+          <img src="img/pothos.jpg" alt="白い背景に伸びるポトスの葉" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="flow">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="en">Flow</span>
+        <h2>ご相談の流れ</h2>
+        <p class="desc">売るときも、買うときも、まずお話を聞くところから始めます。査定・ご相談は無料です。</p>
+      </div>
+      <div class="flows">
+        <div class="flow rv">
+          <h3>売りたい方<span class="en">Sell</span></h3>
+          <ol>
+            <li><span class="n">1</span><div><b>ご相談・お話を聞く</b><span>売る理由、時期、ご希望をうかがいます。まだ迷っている段階でも大丈夫です。</span></div></li>
+            <li><span class="n">2</span><div><b>無料査定</b><span>近隣の成約事例をもとに、根拠のある価格をご提示します。</span></div></li>
+            <li><span class="n">3</span><div><b>売り方を決める</b><span>仲介で売るか、買取か、賃貸に出すか。急がず、暮らしの先まで考えて選びます。</span></div></li>
+            <li><span class="n">4</span><div><b>販売活動</b><span>写真・紹介文を丁寧に整え、各ポータルと地元のネットワークでご紹介します。</span></div></li>
+            <li><span class="n">5</span><div><b>契約・お引き渡し</b><span>契約から決済、引き渡しまで同じ担当が最後まで寄り添います。</span></div></li>
+          </ol>
+        </div>
+        <div class="flow rv">
+          <h3>買いたい方<span class="en">Buy</span></h3>
+          <ol>
+            <li><span class="n">1</span><div><b>ご希望をうかがう</b><span>エリア、予算、暮らし方。条件の優先順位を一緒に整理します。</span></div></li>
+            <li><span class="n">2</span><div><b>資金計画</b><span>住宅ローンの目安と諸費用を先にお伝えし、無理のない範囲を確かめます。</span></div></li>
+            <li><span class="n">3</span><div><b>物件のご紹介・内見</b><span>良い点だけでなく、気になる点も先にお話しします。</span></div></li>
+            <li><span class="n">4</span><div><b>お申し込み・契約</b><span>重要事項は時間をかけて説明します。分からないことは、何度でも。</span></div></li>
+            <li><span class="n">5</span><div><b>お引き渡し・その後</b><span>引き渡し後のリフォームや管理のご相談も、引き続きお受けします。</span></div></li>
+          </ol>
+        </div>
+      </div>
+      <p class="flow-note">賃貸管理・お部屋探しのご相談も、同じように「まずお話を聞く」ことから始めます。</p>
+    </div>
+  </section>
+
+  <section class="section values" id="values">
+    <div class="shade" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="en">Values</span>
+        <h2>大切にしていること</h2>
+      </div>
+      <div class="value-grid">
+        <div class="value rv"><span class="en">I</span><h3>急がせない</h3><p>住まいは、人生で何度もない大きな決めごとです。「今日決めてください」とは言いません。考える時間も、やめる自由も、お客様のものです。</p></div>
+        <div class="value rv"><span class="en">II</span><h3>隠さない</h3><p>良いことも、気になることも、先にお伝えします。後から分かる不安より、先に知る安心を。重要事項のご説明は、納得いただけるまで何度でも。</p></div>
+        <div class="value rv"><span class="en">III</span><h3>暮らしの先まで</h3><p>売ったあと、買ったあと、貸したあと。契約が終わってからの暮らしまで想像してご提案します。地元で続けてきた店の、当たり前の責任です。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section message" id="message">
+    <div class="wrap">
+      <div class="copy rv">
+        <span class="en">Message</span>
+        <h2>部屋に植物を置くように、<br>住まいのことも、ゆっくり育てていきたい。</h2>
+        <p>祖父母が藤沢で始めたこの店を引き継いだとき、まず思ったのは「大きくしなくていい」ということでした。目の前の一人のお客様と、ちゃんと向き合える大きさでいること。それがこの店の良さだと思っています。</p>
+        <p>住まいの相談は、人生の相談と似ています。急がず、静かに、ていねいに。藤沢でお待ちしています。</p>
+        <div class="sign"><small>有限会社新進ハウジング　代表取締役</small><b>渋谷 紗優稀</b></div>
+      </div>
+      <div class="photo rv">
+        <img src="img/leaf-silhouette.jpg" alt="やわらかな朝の光に透けるモンステラの葉" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="area" id="area">
+    <img class="bg" src="img/shonan-beach.jpg" alt="" aria-hidden="true" loading="lazy">
+    <div class="wrap">
+      <span class="en rv">Area</span>
+      <h2 class="rv">藤沢を中心に、湘南と、その周辺へ。</h2>
+      <p class="rv">本店のある藤沢市天神町から、車で30分ほどの範囲を主な対応エリアとしています。それ以外の地域も、内容によってはお受けしますのでご相談ください。</p>
+      <div class="list rv"><span>藤沢市</span><span>鎌倉市</span><span>茅ヶ崎市</span><span>大和市</span><span>綾瀬市</span><span>海老名市</span><span>横浜市（戸塚・泉・瀬谷）</span></div>
+    </div>
+  </section>
+
+  <section class="section company" id="company">
+    <div class="wrap">
+      <div class="col rv">
+        <span class="en">Company</span>
+        <h2>会社概要</h2>
+        <div class="license">
+          <span class="k">宅地建物取引業免許</span>
+          <span class="v">神奈川県知事（10）第14503号</span>
+          <span class="s">カッコ内の数字は免許の更新回数です。5年ごとの更新を10回、藤沢で続けてきました。</span>
+        </div>
+        <div class="access">
+          <span>小田急江ノ島線・JR東海道線 藤沢駅 北口より徒歩約10分（仮）</span>
+          <span>お車の場合は事前にご連絡ください。</span>
+          <a href="https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E8%97%A4%E6%B2%A2%E5%B8%82%E5%A4%A9%E7%A5%9E%E7%94%BA3-20-3" target="_blank" rel="noopener">Googleマップで地図を開く</a>
+        </div>
+      </div>
+      <div class="col rv">
+        <table class="ctable">
+          <tr><th>会社名</th><td>有限会社新進ハウジング</td></tr>
+          <tr><th>所在地</th><td>〒252-0814　神奈川県藤沢市天神町3-20-3</td></tr>
+          <tr><th>代表者</th><td>代表取締役　渋谷 紗優稀</td></tr>
+          <tr><th>創業</th><td>1986年3月</td></tr>
+          <tr><th>資本金</th><td>300万円</td></tr>
+          <tr><th>事業内容</th><td>不動産の売買仲介、賃貸管理、賃貸仲介、不動産に関するご相談</td></tr>
+          <tr><th>免許番号</th><td>宅地建物取引業　神奈川県知事（10）第14503号</td></tr>
+          <tr><th>営業時間</th><td>10:00〜18:00（水曜定休・仮）</td></tr>
+          <tr><th>電話</th><td>0466-47-7655</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <div class="intro rv">
+        <span class="en">Contact</span>
+        <h2>まずは、お話から。</h2>
+        <p>「売るかどうか迷っている」「相続した家をどうするか」「部屋を探している」。どの段階でも大丈夫です。しつこいご連絡はいたしません。</p>
+        <div class="telbox">
+          <span class="k">お電話でのご相談</span>
+          <span class="v">0466-47-7655</span>
+          <span class="h">10:00〜18:00（水曜定休・仮）</span>
+        </div>
+      </div>
+      <form class="rv" id="form" novalidate>
+        <div class="kinds" role="group" aria-label="ご相談の種類">
+          <label><input type="radio" name="kind" value="売りたい" checked>売りたい</label>
+          <label><input type="radio" name="kind" value="買いたい">買いたい</label>
+          <label><input type="radio" name="kind" value="貸したい・管理">貸したい・管理</label>
+          <label><input type="radio" name="kind" value="借りたい">借りたい</label>
+          <label><input type="radio" name="kind" value="その他">その他</label>
+        </div>
+        <div class="field"><label for="f-name">お名前<i>必須</i></label><input id="f-name" name="name" type="text" required autocomplete="name" placeholder="山田 花子"></div>
+        <div class="field"><label for="f-tel">お電話番号<i>必須</i></label><input id="f-tel" name="tel" type="tel" required autocomplete="tel" placeholder="090-0000-0000"></div>
+        <div class="field full"><label for="f-mail">メールアドレス</label><input id="f-mail" name="email" type="email" autocomplete="email" placeholder="example@email.com"></div>
+        <div class="field full"><label for="f-msg">ご相談の内容</label><textarea id="f-msg" name="msg" placeholder="例：藤沢市内の実家を相続しました。売るか貸すか迷っているので、相談したいです。"></textarea></div>
+        <div class="form-foot">
+          <small>送信後、翌営業日までにご連絡します。</small>
+          <button class="btn fill" type="submit">送信する<svg class="arrow" viewBox="0 0 26 8" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 7h24M19 1l6 6"/></svg></button>
+        </div>
+        <div class="sent" id="sent" role="status"><b>お問い合わせを受け付けました</b><span>ありがとうございます。翌営業日までに、担当者よりご連絡いたします。</span><span style="font-size:12px;opacity:.7">※デモ版のため、実際には送信されていません。</span></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <div class="brand"><span class="name">新進ハウジング</span><span class="sub">Shinshin Housing — Fujisawa, since 1986</span></div>
+      <address>〒252-0814 神奈川県藤沢市天神町3-20-3<br>TEL 0466-47-7655　／　宅地建物取引業 神奈川県知事（10）第14503号</address>
+    </div>
+    <nav aria-label="フッター"><a href="#about">私たちについて</a><a href="#services">できること</a><a href="#flow">ご相談の流れ</a><a href="#values">大切にしていること</a><a href="#company">会社概要</a><a href="#contact">ご相談</a></nav>
+    <span class="copy">© 2026 Shinshin Housing Co., Ltd.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var demo=$('#demo');$('#demoClose').addEventListener('click',function(){demo.hidden=true});
+  var header=$('#header');function onScroll(){header.classList.toggle('solid',window.scrollY>30)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var burger=$('#burger'),mnav=$('#mobileNav');
+  function closeNav(){mnav.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+  burger.addEventListener('click',function(){mnav.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
+  $('#navClose').addEventListener('click',closeNav);
+  $$('a',mnav).forEach(function(a){a.addEventListener('click',closeNav)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav()});
+  var rv=$$('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -4% 0px',threshold:0});
+    rv.forEach(function(el){io.observe(el)});
+    function sweep(){rv.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<innerHeight*0.96&&r.bottom>0)el.classList.add('in')}})}
+    setTimeout(sweep,60);window.addEventListener('scroll',sweep,{passive:true});window.addEventListener('resize',sweep);
+  }else{rv.forEach(function(el){el.classList.add('in')})}
+  var form=$('#form');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();var ok=true;
+    $$('[required]',form).forEach(function(f){var bad=!f.value.trim();f.style.borderColor=bad?'#c0604a':'';if(bad)ok=false});
+    if(!ok){var first=$$('[required]',form).filter(function(f){return !f.value.trim()})[0];if(first)first.focus();return}
+    $$('.kinds,.field,.form-foot',form).forEach(function(el){el.hidden=true});
+    $('#sent').classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>
