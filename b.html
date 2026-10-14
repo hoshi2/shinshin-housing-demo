@@ -13,13 +13,13 @@
 /* Layout concept: a white room. One column of air, photos placed like a few large plants,
    a leaf shadow drifting across the wall. Deep leaf green is the only strong colour. */
 :root{
-  --bg:#f5efe4;         /* warm white wall */
-  --bg-2:#ede4d3;       /* washi */
-  --bg-3:#e4d8c3;       /* pale moss */
+  --bg:#faf7f1;         /* warm white wall */
+  --bg-2:#f3ede2;       /* washi */
+  --bg-3:#ebe3d4;       /* pale moss */
   --fg:#2b241c;         /* green-black ink */
   --fg-2:#7b6d5c;       /* muted */
-  --green:#5a4330;      /* deep leaf */
-  --green-2:#a88c6c;    /* sage */
+  --green:#6f5138;      /* deep leaf */
+  --green-2:#b39a7c;    /* sage */
   --wood:#c6a67c;       /* light oak */
   --line:rgba(43,36,28,.14);
   --line-strong:rgba(43,36,28,.32);
@@ -50,7 +50,7 @@ p{margin:0}
 .demo button{background:none;border:1px solid var(--green-2);color:inherit;border-radius:999px;font:inherit;padding:5px 12px;min-height:32px;cursor:pointer;white-space:nowrap;flex:none}
 
 /* header */
-.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(245,239,228,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .4s}
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(250,247,241,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .4s}
 .header.solid{border-color:var(--line)}
 .header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
 .brand{display:flex;flex-direction:column;line-height:1.2;min-width:0}
@@ -85,10 +85,10 @@ p{margin:0}
 .hero .tel small{font-family:var(--font-body);font-size:11.5px;letter-spacing:.16em;color:var(--fg-2)}
 .hero .visual{position:relative;min-width:0;margin-right:calc(-1 * var(--gutter))}
 .hero .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% 62%}
-.hero .visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg-2) 0%,rgba(237,228,211,0) 28%)}
+.hero .visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg-2) 0%,rgba(243,237,226,0) 28%)}
 .hero .shade{position:absolute;inset:-10%;background:url("img/shadow-leaf.jpg") center/cover no-repeat;mix-blend-mode:multiply;opacity:.42;pointer-events:none;animation:drift 46s ease-in-out infinite alternate;z-index:1}
 @keyframes drift{from{transform:translate(-2%,-1%) scale(1.04)}to{transform:translate(2%,1.5%) scale(1.1)}}
-.hero .tate{position:absolute;right:calc(var(--gutter) + 18px);top:64px;z-index:3;writing-mode:vertical-rl;font-family:var(--font-display);font-size:13px;letter-spacing:.42em;color:var(--fg);background:rgba(245,239,228,.78);padding:18px 9px;line-height:1}
+.hero .tate{position:absolute;right:calc(var(--gutter) + 18px);top:64px;z-index:3;writing-mode:vertical-rl;font-family:var(--font-display);font-size:13px;letter-spacing:.42em;color:var(--fg);background:rgba(250,247,241,.78);padding:18px 9px;line-height:1}
 .rise{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
 .rise.d1{animation-delay:.15s}.rise.d2{animation-delay:.3s}.rise.d3{animation-delay:.45s}
 @keyframes rise{from{opacity:.001;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -288,7 +288,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;min-width:0}
 <body>
 
 <div class="demo" id="demo">
-  <span><b>デモ版・Bパターン（木・古民家風）</b>　写真・数値・一部の文章は仮のものです。実際の写真と会社情報に差し替えて公開します。</span>
+  <span><b>デモ版・Bパターン（木の温かみ）</b>　写真・数値・一部の文章は仮のものです。実際の写真と会社情報に差し替えて公開します。</span>
   <button type="button" id="demoClose" aria-label="閉じる">閉じる</button>
 </div>
 
@@ -332,7 +332,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;min-width:0}
         </div>
       </div>
       <div class="visual">
-        <img src="img/b/hero.jpg" alt="障子と畳の部屋から眺める庭" width="1467" height="2200" fetchpriority="high">
+        <img src="img/b/hero.jpg" alt="木の床と小上がりの畳、大きな窓のある現代的な部屋" width="2400" height="1600" fetchpriority="high">
         <div class="shade" aria-hidden="true"></div>
       </div>
       <div class="tate" aria-hidden="true">藤沢市天神町　宅地建物取引業 神奈川県知事（10）第14503号</div>
@@ -351,7 +351,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;min-width:0}
   <section class="section story" id="about">
     <div class="wrap">
       <div class="photo rv">
-        <img src="img/b/story.jpg" alt="庭のある木の日本家屋" loading="lazy">
+        <img src="img/b/story.jpg" alt="木の家具と植物のある明るい居間" loading="lazy">
         <div class="year"><b>1986</b>Since</div>
       </div>
       <div class="copy rv">
@@ -380,21 +380,21 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;min-width:0}
           <div class="cap"><h3>売買仲介<span>Sale &amp; Purchase</span></h3>
             <div class="for"><span>家を売りたい</span><span>家を買いたい</span><span>相続した家をどうするか</span></div></div>
           <p>戸建て・マンション・土地の売却と購入をお手伝いします。査定は無料。売り急がせることはせず、相場と理由をきちんとお伝えしたうえで、売り方を一緒に決めます。相続や住み替えで「まだ決めていない」段階のご相談も歓迎です。</p>
-          <img src="img/b/svc1.jpg" alt="木の日本家屋の玄関" loading="lazy">
+          <img src="img/b/svc1.jpg" alt="白い壁と木のベンチ、観葉植物" loading="lazy">
         </article>
         <article class="svc rv">
           <span class="no">02</span>
           <div class="cap"><h3>賃貸管理<span>Property Management</span></h3>
             <div class="for"><span>アパート・貸家のオーナー様</span><span>親から引き継いだ物件</span></div></div>
           <p>入居者の募集、家賃の集金、更新、退去立ち会い、設備の不具合対応まで。オーナー様と長くお付き合いし、一棟一棟を長く健やかに保つことを優先しています。</p>
-          <img src="img/b/svc2.jpg" alt="木の家が並ぶ通り" loading="lazy">
+          <img src="img/b/svc2.jpg" alt="木の床に光が入る居間" loading="lazy">
         </article>
         <article class="svc rv">
           <span class="no">03</span>
           <div class="cap"><h3>賃貸仲介<span>Rental</span></h3>
             <div class="for"><span>藤沢・湘南で部屋を探したい</span><span>店舗・事務所を借りたい</span></div></div>
           <p>藤沢駅周辺から湘南エリアまで、暮らし方に合ったお部屋をご紹介します。地元で長くやっているからこそ知っている、表に出にくい物件や街の事情もお伝えします。</p>
-          <img src="img/b/svc3.jpg" alt="畳の部屋" loading="lazy">
+          <img src="img/b/svc3.jpg" alt="木の棚と観葉植物" loading="lazy">
         </article>
       </div>
     </div>
@@ -457,7 +457,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;min-width:0}
         <div class="sign"><small>有限会社新進ハウジング　代表取締役</small><b>渋谷 紗優稀</b></div>
       </div>
       <div class="photo rv">
-        <img src="img/b/message.jpg" alt="古民家に差し込む光" loading="lazy">
+        <img src="img/b/message.jpg" alt="白い台所の木の棚と植物" loading="lazy">
       </div>
     </div>
   </section>
