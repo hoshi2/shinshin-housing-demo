@@ -37,7 +37,12 @@ footer{padding:48px 0 40px;border-top:1px solid var(--line);font-size:12.5px;col
 @media(max-width:900px){nav.main,.htel{display:none}.burger{display:block}.contact .grid{grid-template-columns:1fr}form{grid-template-columns:1fr}}
 
 .hero{position:relative;min-height:min(78vh,680px);display:flex;align-items:flex-end;color:#fff;isolation:isolate}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:-2}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:-3;filter:sepia(.42) saturate(.78) contrast(.88) brightness(1.04)}
+.hero .film{position:absolute;inset:0;z-index:-2;pointer-events:none;background:
+ radial-gradient(ellipse at center,rgba(255,236,200,0) 55%,rgba(60,40,20,.35) 100%),
+ linear-gradient(180deg,rgba(255,214,150,.22),rgba(255,180,120,.12) 50%,rgba(40,30,20,.18));mix-blend-mode:multiply}
+.hero .grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.22;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");background-size:240px 240px}
+.hero::after{background:linear-gradient(180deg,rgba(30,25,15,.08) 0%,rgba(30,25,15,.5) 100%)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,25,.1) 0%,rgba(20,30,25,.55) 100%);z-index:-1}
 .hero .wrap{padding-bottom:clamp(44px,7vw,88px);padding-top:120px;width:100%}
 .hero .eyebrow{font-size:13px;letter-spacing:.3em;margin-bottom:18px;opacity:.9}
@@ -66,7 +71,7 @@ footer{padding:48px 0 40px;border-top:1px solid var(--line);font-size:12.5px;col
 @media(max-width:900px){.svc3{grid-template-columns:1fr;margin-top:40px}.when,.about,.msg,.company{grid-template-columns:1fr;gap:30px}.flow{grid-template-columns:1fr 1fr}.values{grid-template-columns:1fr}.facts{gap:24px}}
 </style></head><body><div class="demo" id="demo"><span><b>デモ版・新構成 案I（街の不動産屋）</b>　写真・数値・一部の文章は仮のものです。</span><button id="demoClose">閉じる</button></div><header class="site"><div class="wrap"><a class="brand" href="#top"><span class="name">新進ハウジング</span><span class="sub">Shinshin Housing — Fujisawa, since 1986</span></a><nav class="main"><a href="#services">できること</a><a href="#about">私たちについて</a><a href="#company">会社概要</a></nav><a class="htel" href="tel:0466477655"><b>0466-47-7655</b><small>10:00–18:00　水曜定休</small></a><button class="burger" id="burger" aria-label="メニュー"><span></span><span></span><span></span></button></div></header>
 <div class="mnav" id="mnav"><button class="x" id="mx" aria-label="閉じる">×</button><a href="#services">できること</a><a href="#about">私たちについて</a><a href="#company">会社概要</a><a href="#contact">ご相談</a></div>
-<section class="hero" id="top"><img src="img/p/26625397.jpg" alt="江の島と湘南の海"><div class="wrap"><p class="eyebrow">藤沢・湘南の不動産　1986年創業</p><h1>湘南を中心に、<br>どこでもご相談ください。</h1><p class="lead">売る・買う・貸す・借りる・管理する。</p><div class="cta"><a class="btn fill" href="#contact">相談してみる</a><a class="btn" href="tel:0466477655">0466-47-7655</a></div></div></section>
+<section class="hero" id="top"><img src="img/p/26625397.jpg" alt="江の島と湘南の海"><div class="film" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">藤沢・湘南の不動産　1986年創業</p><h1>湘南を中心に、<br>どこでもご相談ください。</h1><p class="lead">売る・買う・貸す・借りる・管理する。</p><div class="cta"><a class="btn fill" href="#contact">相談してみる</a><a class="btn" href="tel:0466477655">0466-47-7655</a></div></div></section>
 <section class="section" id="services" style="padding-top:0"><div class="wrap"><div class="svc3">
 <div class="card rv"><img src="img/p/32972214.jpg" alt=""><div class="body"><span class="no">01</span><h3>売買仲介<small>Sale &amp; Purchase</small></h3><p>戸建て・マンション・土地の売却と購入。査定は無料。売り急がせず、お客様のご都合に合わせてお手伝いいたします。</p><ul><li>家を売りたい</li><li>家を買いたい</li><li>相続した家をどうするか</li></ul><a class="more" href="#contact" data-kind="売りたい">相談する →</a></div></div>
 <div class="card rv"><img src="img/p/18418225.jpg" alt=""><div class="body"><span class="no">02</span><h3>賃貸管理<small>Property Management</small></h3><p>入居者の募集、家賃の集金、更新、退去立ち会い、設備の不具合対応まで。オーナー様と長くお付き合いし、一棟一棟を健やかに保ちます。</p><ul><li>アパート・貸家のオーナー様</li><li>親から引き継いだ物件</li></ul><a class="more" href="#contact" data-kind="貸したい・管理">相談する →</a></div></div>
