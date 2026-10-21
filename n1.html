@@ -50,12 +50,12 @@ nav.main{display:flex;gap:30px;font-size:13px;letter-spacing:.16em}nav.main a{po
 @keyframes line{0%{background-size:1px 0;background-position:0 0}50%{background-size:1px 100%;background-position:0 0}100%{background-size:1px 0;background-position:0 100%}}
 
 /* services */
-.svc{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
-.svc-img{overflow:hidden}.svc-img img{aspect-ratio:3/2;object-fit:cover;width:100%;transition:transform 1.4s var(--ease)}.svc:hover .svc-img img{transform:scale(1.04)}
-.svc h3{font-size:clamp(22px,2.4vw,27px);letter-spacing:.16em}
-.svc .en{font-family:var(--latin);font-style:italic;font-size:14px;color:var(--fg2);letter-spacing:.1em;margin-top:2px}
-.svc .txt{margin-top:16px}.svc .link{margin-top:24px}
-.sub{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 30px;margin-top:clamp(36px,5vw,56px);padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--fg2)}.sub b{font-family:var(--mincho);font-weight:500;font-size:16px;color:var(--fg);letter-spacing:.12em;margin-right:.2em}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
+.svc-img{overflow:hidden}.svc-img img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.item+.item{margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
+.ih{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:10px}
+.item h3{font-size:clamp(21px,2.2vw,25px);letter-spacing:.16em}.item .link{font-size:12px;flex:none}
+.item .note{margin-top:8px;font-size:13px;color:var(--fg2)}
 
 /* about */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:center}
@@ -75,8 +75,7 @@ nav.main{display:flex;gap:30px;font-size:13px;letter-spacing:.16em}nav.main a{po
 
 /* contact */
 .contact .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,6vw,80px);align-items:start}
-.contact .txt{margin-top:22px;color:var(--fg2)}
-.telbox{margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}.telbox .k{font-size:11.5px;letter-spacing:.24em;color:var(--fg2)}.telbox .v{display:block;font-family:var(--latin);font-weight:500;font-size:40px;letter-spacing:.06em;line-height:1.2;color:var(--ac);margin-top:6px}.telbox .h{font-size:12.5px;color:var(--fg2)}
+.telbox{padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.telbox .k{font-size:11.5px;letter-spacing:.24em;color:var(--fg2)}.telbox .v{display:block;font-family:var(--latin);font-weight:500;font-size:40px;letter-spacing:.06em;line-height:1.2;color:var(--ac);margin-top:6px}.telbox .h{font-size:12.5px;color:var(--fg2)}
 form{display:grid;grid-template-columns:1fr 1fr;gap:26px 20px;min-width:0}
 .kinds{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;border:0;margin:0;padding:0;min-width:0}.kinds legend{font-size:12px;letter-spacing:.2em;color:var(--fg2);margin-bottom:10px;padding:0}
 .kinds label{border:1px solid var(--line);padding:8px 16px;font-size:13px;cursor:pointer;background:var(--bg);transition:.3s;border-radius:999px}.kinds label:has(:checked){border-color:var(--ac);background:var(--ac);color:#fff}.kinds input{position:absolute;opacity:0;pointer-events:none}
@@ -104,7 +103,7 @@ header.site .wrap{height:54px}.brand .name{font-size:13px;letter-spacing:.16em}.
 .hero{height:auto;min-height:0;aspect-ratio:3/4.4;max-height:640px}.hero .wrap{padding-bottom:44px}.hero .eyebrow{font-size:11px;letter-spacing:.18em;margin-bottom:14px}.hero h1{font-size:25px;letter-spacing:.06em}.hero .lead{font-size:13px;letter-spacing:.12em}.hero .link{margin-top:24px}
 .scroll{display:none}
 .section{padding:76px 0}
-#services{padding:40px 0}#services .head{margin-bottom:18px}#services .label{margin-bottom:10px}.svc{gap:16px}.svc-img img{aspect-ratio:5/2}.svc h3{font-size:21px}.svc .en{display:none}.svc .txt{margin-top:8px;font-size:14.5px;line-height:1.85}.svc .link{margin-top:14px}.sub{margin-top:22px;padding-top:14px;font-size:13.5px;line-height:1.8;flex-wrap:nowrap}.sub .link{font-size:12px;flex:none}
+#services{padding:44px 0}#services .head{margin-bottom:18px}#services .label{margin-bottom:10px}.svc{gap:20px}.svc-img img{aspect-ratio:5/2}.item{font-size:14.5px;line-height:1.85}.item h3{font-size:20px}.ih{margin-bottom:6px}.item+.item{margin-top:18px;padding-top:18px}.item .note{margin-top:4px;font-size:12.5px}
 .about img{aspect-ratio:4/3}.facts div{padding:14px 0 12px 12px}.facts .v{font-size:27px}.facts .v.jpv{font-size:15px}
 .philo-body{grid-template-columns:1fr;gap:34px}.catch{order:0;justify-self:center;font-size:27px;margin-top:0}
 .ptext{font-size:15.5px;line-height:2.15;letter-spacing:.04em}
@@ -121,13 +120,13 @@ header.site .wrap{height:54px}.brand .name{font-size:13px;letter-spacing:.16em}.
 
 <section class="section" id="about"><div class="wrap about"><figure class="rv"><img src="img/p/33390916.jpg" alt="江ノ電"><figcaption>Enoden, Fujisawa</figcaption></figure><div class="rv"><div class="head" style="margin-bottom:0"><p class="label"><span class="en">About us</span></p><h2>湘南エリアで、<br>1986年から。</h2></div><p class="txt jp">新進ハウジングは、<wbr>1986年に<wbr>創業した<wbr>不動産店です。<wbr>現在は<wbr>藤沢市天神町を<wbr>拠点に、<wbr>二代目の渋谷が<wbr>賃貸管理を<wbr>中心に、<wbr>売買仲介も<wbr>お手伝いしています。<wbr>小さな店なので、<wbr>担当が<wbr>最初から<wbr>最後まで<wbr>変わりません。</p><div class="facts"><div><span class="k">創業</span><span class="v">1986<small>年</small></span></div><div><span class="k">免許更新</span><span class="v">10<small>回</small></span></div><div><span class="k">本店</span><span class="v jpv">藤沢市<br>天神町</span></div></div></div></div></section>
 
-<section class="section alt" id="services"><div class="wrap"><div class="head rv"><p class="label"><span class="en">Services</span></p><h2>できること</h2></div><div class="svc rv"><div class="svc-img"><img src="img/p/18418225.jpg" alt=""></div><div class="svc-body"><h3>賃貸管理</h3><p class="en">Property Management</p><p class="txt jp">入居者の<wbr>募集から<wbr>家賃の<wbr>集金、<wbr>更新、<wbr>退去の<wbr>立ち会い、<wbr>設備の<wbr>不具合対応まで。<wbr>オーナー様の<wbr>物件を<wbr>まるごと<wbr>お預かりし、<wbr>長く<wbr>健やかに<wbr>保ちます。</p><a class="link" href="#contact" data-kind="貸したい・管理">管理の相談をする</a></div></div><div class="sub rv"><p class="jp"><b>売買仲介</b>も<wbr>承っています。<wbr>（無料査定あり）</p><a class="link" href="#contact" data-kind="売りたい">売買の相談</a></div></div></section>
+<section class="section alt" id="services"><div class="wrap"><div class="head rv"><p class="label"><span class="en">Services</span></p><h2>できること</h2></div><div class="svc rv"><div class="svc-img"><img src="img/p/18418225.jpg" alt=""></div><div class="items"><div class="item"><div class="ih"><h3>賃貸管理</h3><a class="link" href="#contact" data-kind="貸したい・管理">相談する</a></div><p class="jp">入居者の<wbr>募集から<wbr>家賃の<wbr>集金、<wbr>更新、<wbr>退去の<wbr>立ち会い、<wbr>設備の<wbr>対応まで。<wbr>オーナー様の<wbr>物件を<wbr>まるごと<wbr>お預かりします。</p><p class="note jp">お部屋探し<wbr>（賃貸仲介）の<wbr>ご相談も<wbr>承ります。</p></div><div class="item"><div class="ih"><h3>売買仲介</h3><a class="link" href="#contact" data-kind="売りたい">相談する</a></div><p class="jp">戸建て・<wbr>マンション・<wbr>土地の<wbr>売却と<wbr>購入を<wbr>お手伝いします。<wbr>査定は<wbr>無料です。</p></div></div></div></div></section>
 
 <section class="section" id="philosophy"><div class="wrap"><div class="head rv"><p class="label"><span class="en">Philosophy</span></p></div><div class="philo-body"><p class="catch rv">ご縁を紡ぎ、<br>信頼を育む。</p><div class="ptext jp rv"><p>私たちは、<wbr>人と人との<wbr>出会いに<wbr>感謝し、<wbr>一つひとつの<wbr>ご縁を<wbr>大切にします。</p><p>相手を想い、<wbr>心を通わせ、<wbr>誠実に<wbr>向き合うこと。</p><p>その小さな<wbr>積み重ねが、<wbr>やがて<wbr>大きな信頼となり、<wbr>新たな可能性を<wbr>生み出していくと<wbr>信じています。</p><p>不動産を通じて<wbr>人と人を結び、<wbr>互いの想いを<wbr>尊重しながら、<wbr>豊かな未来を<wbr>共に<wbr>育んでまいります。</p></div></div></div></section>
 
 <section class="section alt" id="company"><div class="wrap"><div class="head rv"><p class="label"><span class="en">Company</span></p><h2>会社概要</h2></div><table class="ctable rv"><tr><th>会社名</th><td>有限会社新進ハウジング</td></tr><tr><th>代表者</th><td>代表取締役　渋谷 紗優稀</td></tr><tr><th>所在地</th><td>〒252-0814<br>神奈川県藤沢市天神町3-20-3</td></tr><tr><th>電話</th><td>0466-47-7655</td></tr><tr><th>営業時間</th><td>10:00〜18:00（水曜定休・仮）</td></tr><tr><th>創業</th><td>1986年3月</td></tr><tr><th>資本金</th><td>300万円</td></tr><tr><th>免許</th><td>宅地建物取引業<br>神奈川県知事（10）第14503号</td></tr><tr><th>事業内容</th><td>不動産の売買仲介・賃貸管理・賃貸仲介</td></tr></table></div></section>
 
-<section class="section contact" id="contact"><div class="wrap"><div class="grid"><div class="rv"><div class="head" style="margin-bottom:0"><p class="label"><span class="en">Contact</span></p><h2>まずは、お話から。</h2></div><p class="txt jp">「売るかどうか<wbr>迷っている」<wbr>「相続した家を<wbr>どうするか」<wbr>「部屋を<wbr>探している」。<wbr>どの段階でも<wbr>大丈夫です。<wbr>しつこい<wbr>ご連絡は<wbr>いたしません。</p><div class="telbox"><span class="k">お電話でのご相談</span><a class="v" href="tel:0466477655">0466-47-7655</a><span class="h">10:00〜18:00（水曜定休・仮）</span></div></div><div class="rv"><form id="form" novalidate>
+<section class="section contact" id="contact"><div class="wrap"><div class="grid"><div class="rv"><div class="telbox"><span class="k">お電話でのご相談</span><a class="v" href="tel:0466477655">0466-47-7655</a><span class="h">10:00〜18:00（水曜定休・仮）</span></div></div><div class="rv"><form id="form" novalidate>
 <fieldset class="kinds"><legend>ご相談の種類</legend><label><input type="radio" name="kind" value="貸したい・管理" checked>貸したい・管理</label><label><input type="radio" name="kind" value="売りたい">売りたい</label><label><input type="radio" name="kind" value="買いたい">買いたい</label><label><input type="radio" name="kind" value="借りたい">借りたい</label><label><input type="radio" name="kind" value="その他">その他</label></fieldset>
 <div class="field"><label for="f-name">お名前<i>必須</i></label><input id="f-name" name="name" type="text" required autocomplete="name" placeholder="山田 花子"></div>
 <div class="field"><label for="f-tel">お電話番号<i>必須</i></label><input id="f-tel" name="tel" type="tel" required autocomplete="tel" placeholder="090-0000-0000"></div>
