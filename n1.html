@@ -36,7 +36,7 @@ nav.main{display:flex;gap:30px;font-size:13px;letter-spacing:.16em}nav.main a{po
 
 /* hero */
 .hero{position:relative;height:min(88svh,780px);min-height:520px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;isolation:isolate}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;z-index:-2;filter:saturate(.7) contrast(.96) brightness(.98);animation:zoom 14s var(--ease) both}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% 80%;z-index:-2;filter:saturate(.95);animation:zoom 14s var(--ease) both}
 @keyframes zoom{from{transform:scale(1.1)}to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,22,18,.18) 0%,rgba(14,22,18,0) 30%,rgba(14,22,18,.15) 55%,rgba(14,22,18,.62) 100%)}
 .hero .wrap{width:100%;padding-bottom:clamp(56px,8vw,96px)}
@@ -63,8 +63,8 @@ nav.main{display:flex;gap:30px;font-size:13px;letter-spacing:.16em}nav.main a{po
 .about .txt{margin-top:24px}.about .txt p+p{margin-top:1em}
 
 /* philosophy */
-.philo-body{display:grid;grid-template-columns:1fr auto;gap:clamp(40px,8vw,120px);align-items:start}
-.catch{writing-mode:vertical-rl;font-family:var(--mincho);font-size:clamp(28px,3.4vw,40px);letter-spacing:.36em;line-height:2;color:var(--ac);order:2;justify-self:end;margin-top:-6px}
+.philo-body{display:grid;grid-template-columns:auto 1fr;gap:clamp(40px,8vw,120px);align-items:start}
+.catch{writing-mode:vertical-rl;font-family:var(--mincho);font-size:clamp(28px,3.4vw,40px);letter-spacing:.36em;line-height:2;color:var(--ac);justify-self:start;margin-top:-6px}
 .ptext{font-family:var(--mincho);font-size:17px;line-height:2.3;letter-spacing:.08em;max-width:600px}.ptext p+p{margin-top:1.1em}
 
 /* company */
@@ -80,7 +80,7 @@ footer{background:var(--fg);color:rgba(255,255,255,.72);padding:64px 0 36px;font
 footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.14)}
 footer .brand .co{color:rgba(255,255,255,.6)}footer .brand .name{color:#fff}footer .addr{margin-top:16px}
 footer nav{display:flex;flex-direction:column;gap:6px;font-size:13px;letter-spacing:.14em}
-footer .copy{padding-top:24px;font-family:var(--latin);letter-spacing:.16em;font-size:12px}
+footer .credit{margin-top:6px;font-size:10.5px;opacity:.55}footer .credit a{text-decoration:underline}footer .copy{padding-top:24px;font-family:var(--latin);letter-spacing:.16em;font-size:12px}
 
 @media(max-width:900px){
 nav.main,.htel{display:none}.burger{display:block}
@@ -89,7 +89,7 @@ nav.main,.htel{display:none}.burger{display:block}
 @media(max-width:600px){
 body{font-size:15px;line-height:1.9;letter-spacing:.03em}
 header.site .wrap{height:54px}.brand .name{font-size:13px;letter-spacing:.16em}.brand .co{font-size:9px}
-.hero{height:auto;min-height:0;aspect-ratio:3/4.4;max-height:640px}.hero .wrap{padding-bottom:44px}.hero .eyebrow{font-size:11px;letter-spacing:.18em;margin-bottom:14px}.hero h1{font-size:25px;letter-spacing:.06em}.hero .lead{font-size:13px;letter-spacing:.12em}.hero .link{margin-top:24px}
+.hero img{object-position:40% 55%}.hero{height:auto;min-height:0;aspect-ratio:3/4.4;max-height:640px}.hero .wrap{padding-bottom:44px}.hero .eyebrow{font-size:11px;letter-spacing:.18em;margin-bottom:14px}.hero h1{font-size:25px;letter-spacing:.06em}.hero .lead{font-size:13px;letter-spacing:.12em}.hero .link{margin-top:24px}
 .scroll{display:none}
 .section{padding:76px 0}
 #services{padding:44px 0}#services .head{margin-bottom:18px}#services .label{margin-bottom:10px}.svc{gap:20px}.svc-img img{aspect-ratio:5/2}.item{font-size:14.5px;line-height:1.85}.item h3{font-size:20px}.ih{margin-bottom:6px}.item+.item{margin-top:18px;padding-top:18px}.item .note{margin-top:4px;font-size:12.5px}
@@ -105,7 +105,7 @@ header.site .wrap{height:54px}.brand .name{font-size:13px;letter-spacing:.16em}.
 <header class="site"><div class="wrap"><a class="brand" href="#top"><span class="co">有限会社</span><span class="name">新進ハウジング</span></a><nav class="main"><a href="#about">私たちについて</a><a href="#services">できること</a><a href="#philosophy">企業理念</a><a href="#company">会社概要</a><a href="#contact">ご相談</a></nav><a class="htel" href="tel:0466477655"><b>0466-47-7655</b><small>10:00–18:00　水曜定休</small></a><button class="burger" id="burger" aria-label="メニュー"><span></span><span></span></button></div></header>
 <div class="mnav" id="mnav"><button class="x" id="mx" aria-label="閉じる">×</button><a href="#about">私たちについて</a><a href="#services">できること</a><a href="#philosophy">企業理念</a><a href="#company">会社概要</a><a href="#contact">ご相談</a><a class="tel" href="tel:0466477655">0466-47-7655</a></div>
 
-<section class="hero" id="top"><img src="img/p/26625397.jpg" alt="江の島と湘南の海"><p class="cap">Enoshima, Shonan</p><div class="wrap"><p class="eyebrow">藤沢・湘南の不動産　since 1986</p><h1>湘南を中心に、<br>どこでもご相談ください。</h1><p class="lead">売る・買う・貸す・借りる・管理する。</p><a class="link" href="#contact">ご相談はこちら</a></div><span class="scroll">Scroll</span></section>
+<section class="hero" id="top"><img src="img/p/shonandaira.jpg" alt="湘南平から望む湘南の街と海"><p class="cap">View from Shonandaira</p><div class="wrap"><p class="eyebrow">藤沢・湘南の不動産　since 1986</p><h1>湘南を中心に、<br>どこでもご相談ください。</h1><p class="lead">売る・買う・貸す・借りる・管理する。</p><a class="link" href="#contact">ご相談はこちら</a></div><span class="scroll">Scroll</span></section>
 
 <section class="section" id="about"><div class="wrap about"><figure class="rv"><img src="img/p/33390916.jpg" alt="江ノ電"><figcaption>Enoden, Fujisawa</figcaption></figure><div class="rv"><div class="head" style="margin-bottom:0"><p class="label"><span class="en">About us</span></p><h2>湘南エリアで、<br>1986年から。</h2></div><div class="txt jp"><p>新進ハウジングは、<wbr>1986年に<wbr>平塚で<wbr>創業した<wbr>不動産会社です。</p><p>創業者である<wbr>祖父から<wbr>受け継ぎ、<wbr>現在は<wbr>藤沢市天神町を<wbr>拠点として、<wbr>不動産売買・<wbr>仲介、<wbr>賃貸管理などを<wbr>行っております。</p></div></div></div></section>
 
@@ -117,7 +117,7 @@ header.site .wrap{height:54px}.brand .name{font-size:13px;letter-spacing:.16em}.
 
 <section class="section contact" id="contact"><div class="wrap"><div class="grid"><div class="cbox rv"><span class="k">お電話でのご相談</span><a class="v" href="tel:0466477655">0466-47-7655</a><span class="h">10:00〜18:00（水曜定休・仮）<br>FAX 0466-47-7665</span></div><div class="cbox rv"><span class="k">メールでのご相談</span><span class="v mail">info@sshousing.co.jp</span><span class="h">内容を確認のうえ、担当よりご連絡いたします。</span></div></div></div></section>
 
-<footer><div class="wrap"><div class="top"><div><div class="brand"><span class="co">有限会社</span><span class="name">新進ハウジング</span></div><p class="addr">〒252-0814 神奈川県藤沢市天神町3-20-3<br>TEL 0466-47-7655　FAX 0466-47-7665<br>info@sshousing.co.jp<br>宅地建物取引業 神奈川県知事（10）第14503号</p></div><nav><a href="#about">私たちについて</a><a href="#services">できること</a><a href="#philosophy">企業理念</a><a href="#company">会社概要</a><a href="#contact">ご相談</a></nav></div><p class="copy">© 1986–2026 Shinshin Housing Co., Ltd.</p></div></footer>
+<footer><div class="wrap"><div class="top"><div><div class="brand"><span class="co">有限会社</span><span class="name">新進ハウジング</span></div><p class="addr">〒252-0814 神奈川県藤沢市天神町3-20-3<br>TEL 0466-47-7655　FAX 0466-47-7665<br>info@sshousing.co.jp<br>宅地建物取引業 神奈川県知事（10）第14503号</p></div><nav><a href="#about">私たちについて</a><a href="#services">できること</a><a href="#philosophy">企業理念</a><a href="#company">会社概要</a><a href="#contact">ご相談</a></nav></div><p class="copy">© 1986–2026 Shinshin Housing Co., Ltd.</p><p class="credit">トップ写真：<a href="https://commons.wikimedia.org/wiki/File:Shonandaira_2023_august_7_various_22_33_19_360000.jpeg" target="_blank" rel="noopener">Nesnad / Wikimedia Commons</a>（CC BY 4.0）</p></div></footer>
 <script>
 (function(){document.documentElement.classList.add('js');
 var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
